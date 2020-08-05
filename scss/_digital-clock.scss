@@ -1,0 +1,95 @@
+$piece-width-length: 8px;
+
+div#digital-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.7);
+}
+
+.number {
+  position: relative;
+  height: calc(5 * 10px + 4 * 3px);
+  width: calc(3 * 10px + 2 * 3px);
+  margin: 0 1rem 4rem;
+}
+
+.piece {
+  background-color: $color-text;
+  border-right-color: $color-text;
+  border-bottom-color: $color-text;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  transform: scale(0);
+}
+
+.piece.show {
+  transform: scale(1);
+  transition: transform 50ms linear;
+}
+
+.piece:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+
+.piece:nth-of-type(2) {
+  top: 0;
+  left: 18px;
+}
+
+.piece:nth-of-type(3) {
+  top: 0;
+  left: 36px;
+}
+
+.piece:nth-of-type(4) {
+  top: 18px;
+  left: 0;
+}
+
+.piece:nth-of-type(5) {
+  top: 18px;
+  left: 36px;
+}
+
+.piece:nth-of-type(6) {
+  top: 36px;
+  left: 0;
+}
+
+.piece:nth-of-type(7) {
+  top: 36px;
+  left: 18px;
+}
+
+.piece:nth-of-type(8) {
+  top: 36px;
+  left: 36px;
+}
+
+.piece:nth-of-type(9) {
+  top: 54px;
+  left: 0px;
+}
+
+.piece:nth-of-type(10) {
+  top: 54px;
+  left: 36px;
+}
+
+.piece:nth-of-type(11) {
+  top: 72px;
+  left: 0px;
+}
+
+.piece:nth-of-type(12) {
+  top: 72px;
+  left: 18px;
+}
+
+.piece:nth-of-type(13) {
+  top: 72px;
+  left: 36px;
+}

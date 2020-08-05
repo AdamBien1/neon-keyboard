@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Speed Typing Game</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.min.css">
+  </head>
+  <body>
+    <div class="difficulty-container">
+      <i class="fas fa-angle-left hoverable" id="prev-difficulty"></i>
+      <span id="difficulty"></span>
+      <i class="fas fa-angle-right hoverable" id="next-difficulty"></i>
+      <div class="difficulty-info"></div>
+    </div>
+
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="title">Light Speed</h1>
+        <div class="scoreboard">
+          <h2>Score: <span id="score">0</span></h2>
+          <h2>Streak: <span id="streak">0</span></h2>
+          <h2>Multiplier: <span id="multiplier">0</span></h2>
+        </div>
+      </header>
+
+      <!-- Timer & Word-->
+      <div class="timer-word">
+        <!-- <h2 id="time">5.0s</h2> -->
+        <div id="digital-timer">
+          <div class="number" id="tens-digit">
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+          </div>
+          <div class="number" id="ones-digit">
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+          </div>
+        </div>
+      </div>
+      <div class="word">
+        <h2 id="instruction">Type each word to learn a new fact!</h3>
+          <p id="fact-paragraph"></p>
+        <h2 id="next-word">
+          <!-- TO JEST DZIWNY BŁĄD -->
+        </h2>
+      </div>
+
+      <!-- Input -->
+      <div class="input">
+        <div id="restart-message">
+          <h3>Score: <span id="highscore"></span></h3>
+          <h3> Best Streak: <span id="highstreak"></span></h3>
+          <p><kbd>spacebar</kbd> to start</p>
+        </div>
+        <input type="text" id="user-input" autofocus autocomplete="off" />
+      </div>
+
+      <!-- Keyboard -->
+      <div id="keyboard" class="shadow">
+        <ul id="row-1">
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="q">Q</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="w">W</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="e">E</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="r">R</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="t">T</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="y">Y</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="u">U</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="i">I</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="o">O</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="p">P</span>
+            </div>
+          </li>
+        </ul>
+        <ul id="row-2">
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="a">A</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="s">S</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="d">D</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="f">F</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="g">G</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="h">H</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="j">J</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="k">K</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="l">L</span>
+            </div>
+          </li>
+        </ul>
+        <ul id="row-3">
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="z">Z</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="x">X</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="c">C</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="v">V</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="b">B</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="n">N</span>
+            </div>
+          </li>
+          <li>
+            <div class="key shadow-key-transparent">
+              <span class="fitter" id="m">M</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

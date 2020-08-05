@@ -1,0 +1,76 @@
+.shadow-key-transparent:before,
+.shadow-key-transparent::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+
+  background: transparent;
+  background-size: 400%;
+  z-index: -1;
+
+  border-radius: 15px;
+
+  animation: shadow 20s linear infinite;
+}
+
+.shadow-key:before,
+.shadow-key::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+
+  background: linear-gradient(
+    45deg,
+    $red,
+    $yellow,
+    $green,
+    $cyan,
+    $blue,
+    $purple,
+    $pink,
+    $red,
+    $yellow,
+    $green,
+    $cyan,
+    $blue,
+    $purple,
+    $pink
+  );
+  background-size: 400%;
+  z-index: -1;
+
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+
+  animation: shadow 20s linear infinite;
+}
+
+.shadow-key:after {
+  filter: blur(15px);
+  opacity: 0.5;
+}
+
+.shadow-key:before,
+.shadow-key:after {
+  border-radius: 15px;
+}
+
+@keyframes shadow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
